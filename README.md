@@ -1,63 +1,94 @@
 # jabir-skills
 
-Jabir Hussain's personal collection of agent skills — for **personal**, **engineering**, and **learning** work. Small, composable, model-agnostic. Distributed as a single Claude Code plugin.
+**My agent skills — small, sharp tools I use across personal, engineering, and learning work.**
+
+[![skills.sh](https://skills.sh/b/jabirhussainturi/skills)](https://skills.sh/jabirhussainturi/skills)
+
+These are the skills I reach for every day, packaged so I can drop them onto any machine
+or agent in one command. They're built to be **small, composable, and model-agnostic** —
+each one does a single job well and gets out of the way. No framework, no lock-in. Take
+one, fork it, make it yours.
+
+Distributed as a single Claude Code plugin, but you can also cherry-pick individual
+skills via [skills.sh](https://skills.sh).
 
 ## Install
 
-**Native Claude Code:**
+**Everything (native Claude Code):**
 
 ```
 /plugin marketplace add jabirhussainturi/skills
 /plugin install jabir-skills@jabir-skills
 ```
 
-**Via skills.sh (Claude Code, Codex, Cursor, …):**
+**Everything (skills.sh — Claude Code, Codex, Cursor, …):**
 
 ```bash
 npx skills@latest add jabirhussainturi/skills
 ```
 
-**Local development** (symlink every skill into `~/.claude/skills`, including drafts):
+**Just one skill** — pick exactly what you want, nothing else:
+
+```bash
+npx skills@latest add jabirhussainturi/skills --skill write-a-skill -y -g
+```
+
+`--skill <name>` installs only that skill (`-g` user-level, `-y` no prompts). Run with
+`--list` to see what's available, or `--all` to grab the lot.
+
+**Local development** — symlink every skill (drafts included) into `~/.claude/skills`:
 
 ```bash
 ./scripts/link-skills.sh
 ```
 
-## Skills
+## The skills
 
-### Engineering
+### 🛠 Engineering
 
-Skills for code and tooling work.
+Tools for code and tooling work.
 
-- **[write-a-skill](./skills/engineering/write-a-skill/SKILL.md)** — Scaffold a new skill with correct structure, a sharp trigger description, and progressive disclosure. Keeps the repo's ship-list invariant in sync.
+- **[write-a-skill](./skills/engineering/write-a-skill/SKILL.md)** — Author a new skill
+  the right way. It interviews you for the *real* trigger, writes a `description` sharp
+  enough to actually fire when you want it, splits long detail into supporting files
+  (progressive disclosure), and wires the result into the repo's ship-list so
+  `plugin.json` never silently drifts. The skill that makes every other skill easier.
 
-### Personal
+### ✍️ Personal
 
 Personal workflow and content tools.
 
-_No shipped skills yet._
+_Nothing shipped yet — skills incubate in [`in-progress/`](./skills/in-progress/) until
+they survive a real run, then graduate here._
 
-### Learning
+### 📚 Learning
 
-Skills that help me learn — explain, quiz, study.
+Skills that help me actually learn a thing — explain a codebase, quiz me, study a paper,
+drill with spaced repetition.
 
-_No shipped skills yet._
+_Nothing shipped yet._
 
-## Repository layout
+## How this repo is organized
 
-```
-skills/
-├── engineering/   shipped — code & tooling
-├── personal/      shipped — personal workflow & content
-├── learning/      shipped — learning aids
-├── in-progress/   parked  — drafts, usable locally, not installed
-└── deprecated/    parked  — retired, kept for reference
-```
+Skills live in **buckets**. A bucket is either *shipped* (installs with the plugin) or
+*parked* (lives in the repo, never installs):
 
-Governance and conventions live in [CLAUDE.md](./CLAUDE.md); the repo's domain
-language in [CONTEXT.md](./CONTEXT.md); architecture decisions in
+| Bucket | State | What's in it |
+|---|---|---|
+| `engineering/` | **shipped** | daily code & tooling skills |
+| `personal/` | **shipped** | personal workflow & content skills |
+| `learning/` | **shipped** | skills that help me learn |
+| `in-progress/` | parked | drafts — usable locally, not installed for others |
+| `deprecated/` | parked | retired skills, kept for reference |
+
+The rule that keeps `plugin.json` honest: every shipped skill appears in **both** its
+bucket README **and** the plugin's ship-list; parked skills appear in **neither**. A
+skill graduates from `in-progress/` to a shipped bucket once it's proven.
+
+The details: governance and conventions in [CLAUDE.md](./CLAUDE.md), the repo's domain
+language in [CONTEXT.md](./CONTEXT.md), and architecture decisions in
 [docs/adr/](./docs/adr/).
 
 ## License
 
-[MIT](./LICENSE) © 2026 Jabir Hussain
+[MIT](./LICENSE) © 2026 Jabir Hussain — take them, fork them, make them yours.
