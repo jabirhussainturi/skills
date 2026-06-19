@@ -1,0 +1,16 @@
+{
+  "name": "jabir-skills",
+  "owner": {
+    "name": "Jabir Hussain"
+  },
+  "metadata": {
+    "description": "Jabir Hussain's personal collection of agent skills — personal, engineering, and learning."
+  },
+  "plugins": [
+    {
+      "name": "jabir-skills",
+      "source": "./",
+      "description": "Personal, engineering, and learning agent skills for Claude Code and compatible agents."
+    }
+  ]
+}

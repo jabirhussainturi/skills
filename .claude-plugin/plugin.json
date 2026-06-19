@@ -1,0 +1,11 @@
+{
+  "name": "jabir-skills",
+  "description": "Jabir Hussain's personal, engineering, and learning agent skills.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Jabir Hussain"
+  },
+  "skills": [
+    "./skills/engineering/write-a-skill"
+  ]
+}
