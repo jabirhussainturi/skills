@@ -4,13 +4,13 @@
     "name": "Jabir Hussain"
   },
   "metadata": {
-    "description": "Jabir Hussain's personal collection of agent skills — personal, engineering, and learning."
+    "description": "Sharp, single-purpose agent skills for personal, engineering, and learning work — small, composable, model-agnostic, no framework lock-in."
   },
   "plugins": [
     {
       "name": "jabir-skills",
       "source": "./",
-      "description": "Personal, engineering, and learning agent skills for Claude Code and compatible agents."
+      "description": "The agent skills I actually use — for building, writing, and learning. Each does one job well; install all of them or cherry-pick one."
     }
   ]
 }

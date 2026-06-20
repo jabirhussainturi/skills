@@ -1,6 +1,6 @@
 {
   "name": "jabir-skills",
-  "description": "Jabir Hussain's personal, engineering, and learning agent skills.",
+  "description": "Sharp, single-purpose agent skills for personal, engineering, and learning work — small, composable, model-agnostic, no framework lock-in.",
   "version": "0.1.0",
   "author": {
     "name": "Jabir Hussain"
