@@ -6,6 +6,8 @@
     "name": "Jabir Hussain"
   },
   "skills": [
-    "./skills/engineering/write-a-skill"
+    "./skills/engineering/write-a-skill",
+    "./skills/engineering/grill-with-docs",
+    "./skills/personal/grill-me"
   ]
 }

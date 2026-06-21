@@ -33,7 +33,7 @@ npx skills@latest add jabirhussainturi/skills
 **Just one skill** — cherry-pick exactly what you want, nothing else:
 
 ```bash
-npx skills@latest add jabirhussainturi/skills --skill write-a-skill -y -g
+npx skills@latest add jabirhussainturi/skills --skill grill-me -y -g
 ```
 
 `--skill <name>` installs only that skill (`-g` user-level, `-y` no prompts). Add
@@ -50,6 +50,22 @@ npx skills@latest add jabirhussainturi/skills --skill write-a-skill -y -g
 I built these to fix the specific ways working with coding agents goes wrong. Each one
 started as a recurring annoyance that was cheaper to solve once, properly, than to keep
 working around.
+
+### The agent built the wrong thing
+
+**The problem.** The single most common failure isn't bad code — it's the agent
+confidently building something you didn't ask for, because you and it were never actually
+aligned. You think it understood; it didn't; you find out an hour later.
+
+> "No-one knows exactly what they want." — David Thomas & Andrew Hunt, *The Pragmatic Programmer*
+
+**The fix.** Get grilled *before* you build.
+[`grill-me`](./skills/personal/grill-me/SKILL.md) interviews you relentlessly — one
+question at a time, a recommended answer for each — walking the whole decision tree until
+nothing's left ambiguous. [`grill-with-docs`](./skills/engineering/grill-with-docs/SKILL.md)
+does the same inside a codebase, but also challenges your words against the project's
+`CONTEXT.md`, checks claims against the real code, and records the hard calls as ADRs as
+they happen.
 
 ### A skill is only as good as its trigger
 
@@ -88,8 +104,7 @@ it evaporates. Or you write it up once, for a single platform, and it dies there
 
 **The fix.** That's what the `personal/` and `learning/` buckets are for: tools that turn
 what I build and what I learn into something shareable and durable. They're filling in
-now — the first few are incubating in `in-progress/` and will graduate here the moment
-they survive real use.
+now — more are incubating in `in-progress/` and graduate the moment they survive real use.
 
 ## The skills
 
@@ -105,13 +120,24 @@ they survive real use.
   - **Why it's here** the description is the entire basis on which a skill fires; get it
     wrong and the best skill in the world never runs. This is the skill that makes every
     other skill better.
+- **[grill-with-docs](./skills/engineering/grill-with-docs/SKILL.md)** — A grilling
+  session with domain awareness. Same relentless one-question-at-a-time loop as `grill-me`,
+  but it challenges your terminology against `CONTEXT.md`, cross-references what you claim
+  against the actual code, and records hard, surprising, traded-off decisions as ADRs —
+  inline, as they crystallise.
+  - **Reach for it** before any non-trivial change to an existing codebase.
+  - **Why it's here** alignment *and* a sharpened, documented domain model in one pass —
+    so the language stays precise and the "why" behind decisions doesn't get lost.
 
 ### ✍️ Personal — workflow & content
 
-Tools for turning work into writing, and for the day-to-day that isn't code.
-
-_Nothing shipped yet — skills incubate in [`in-progress/`](./skills/in-progress/) until
-they survive a real run, then graduate here._
+- **[grill-me](./skills/personal/grill-me/SKILL.md)** — Get relentlessly interviewed
+  about a plan or design before you build it. One question at a time, a recommended answer
+  for each, walking every branch of the decision tree until nothing's ambiguous.
+  - **Reach for it** before starting anything where "the agent built the wrong thing"
+    would hurt — writing, product decisions, an architecture in the abstract.
+  - **Why it's here** misalignment is the #1 failure mode; ten minutes of grilling up
+    front saves an hour of building the wrong thing.
 
 ### 📚 Learning — explain, quiz, study
 
@@ -140,6 +166,11 @@ skill graduates from `in-progress/` to a shipped bucket once it's proven.
 The details live where you'd expect: governance and conventions in
 [CLAUDE.md](./CLAUDE.md), the repo's domain language in [CONTEXT.md](./CONTEXT.md), and
 architecture decisions in [docs/adr/](./docs/adr/).
+
+## Credits
+
+`grill-me` and `grill-with-docs` are adapted from
+[mattpocock/skills](https://github.com/mattpocock/skills) (MIT).
 
 ## License
 
